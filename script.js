@@ -100,7 +100,7 @@ for (var i = 0; i < finances.length; i++) {
   var dateString = finances[i][0];
   var [monthString, yearString] = dateString.split("-");
   var month = 0;
-
+  //Switch case will convert the month string into months
   switch (monthString) {
     case "Jan":
       month = 1;
@@ -142,3 +142,18 @@ for (var i = 0; i < finances.length; i++) {
   totalMonths++;
 }
 console.log("The total number of months is: " + totalMonths);
+
+//The net total amount of Profit/Losses over the entire period.
+//In order to calculate the net profit or loss over the given period we need to follow the below steps:
+//1.Create a variable which will stock the required some and initiliase;
+//2.Create loop to iterate through finances list
+//3.Inside loop add every entry to the first variable created
+//4. Display result in console
+var sumOfFinancialRecords = 0;
+for (const entry of finances) {
+  sumOfFinancialRecords += entry[1]; //Entry[1]indicate the position of the entry from the array set
+}
+console.log(
+  "The net total amount of profit over the entire period is: " +
+    sumOfFinancialRecords
+);
