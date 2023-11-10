@@ -158,7 +158,7 @@ console.log(
     sumOfFinancialRecords
 );
 
-//Total change in Profit/Losses from month to month
+//Total change in Profit/Losses from month to month, greatest increase and lowest decrease
 //1. Declare variable for total monthly changes
 //2. Create a for loop to iterate through the array finances
 //3. Create variable for current and previous month;
@@ -168,20 +168,53 @@ console.log(
 //7. Calculate the average change over the period
 //8. Display results
 
+var maxIncrease = -Infinity; //This step is to calculate the greatest increase
+var maxIncreaseDate = ""; //This step is to calculate the greatest change
+var maxDecrease = -Infinity; //This step is to calculate the greatest decrease
+var maxDecreaseDate = "";
+
 var changesInProfit = 0;
 for (var i = 1; i < finances.length; i++) {
   var currentMonth = finances[i][1];
   var previousMonth = finances[i - 1][1];
   var change = currentMonth - previousMonth;
   changesInProfit += change;
+  if (i === 1) {
+    //this if is for finding out the greatest change over the period
+    maxIncrease = change; //the first comparison is used for the future reference
+    maxIncreaseDate = finances[i][0];
+    maxDecrease = change;
+    maxDecreaseDate = finances[i][0];
+  } else {
+    // Update maximum increase and corresponding date
+    if (change > maxIncrease) {
+      //next increase is compared with first, if higher stock in the variable
+      maxIncrease = change;
+      maxIncreaseDate = finances[i][0];
+    }
+    if (change < maxDecrease) {
+      //next increase is compared with first, if higher stock in the variable
+      maxDecrease = change;
+      maxDecreaseDate = finances[i][0];
+    }
+  }
 }
-// console.log(
-//   "The total amount of changes from a month to another over the period is: " +
-//     changesInProfit
-// );
+
 var average = changesInProfit / (totalMonths - 1);
 var roundedAverage = average.toFixed(2);
 console.log(
   "The average of the changes in profit or losses over the period is: " +
     roundedAverage
+);
+console.log(
+  "The greatest increase in Profit or Losses is: " +
+    maxIncrease +
+    " on " +
+    maxIncreaseDate
+);
+console.log(
+  "The greatest decrease in Profit or Losses is: " +
+    maxDecrease +
+    " on " +
+    maxDecreaseDate
 );
