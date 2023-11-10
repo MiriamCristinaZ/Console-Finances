@@ -155,6 +155,7 @@ for (const entry of finances) {
 }
 console.log(
   "The net total amount of profit over the entire period is: " +
+    "$" +
     sumOfFinancialRecords
 );
 
@@ -207,13 +208,13 @@ console.log(
     roundedAverage
 );
 console.log(
-  "The greatest increase in Profit or Losses is: " +
+  "The greatest increase in Profit or Losses is: $" +
     maxIncrease +
     " on " +
     maxIncreaseDate
 );
 console.log(
-  "The greatest decrease in Profit or Losses is: " +
+  "The greatest decrease in Profit or Losses is: $" +
     maxDecrease +
     " on " +
     maxDecreaseDate
