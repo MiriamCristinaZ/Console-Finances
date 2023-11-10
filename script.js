@@ -157,3 +157,31 @@ console.log(
   "The net total amount of profit over the entire period is: " +
     sumOfFinancialRecords
 );
+
+//Total change in Profit/Losses from month to month
+//1. Declare variable for total monthly changes
+//2. Create a for loop to iterate through the array finances
+//3. Create variable for current and previous month;
+//4. Calculate the change between current and previous into a variable
+//5. Add every change to the total variable created
+//6. Display results
+//7. Calculate the average change over the period
+//8. Display results
+
+var changesInProfit = 0;
+for (var i = 1; i < finances.length; i++) {
+  var currentMonth = finances[i][1];
+  var previousMonth = finances[i - 1][1];
+  var change = currentMonth - previousMonth;
+  changesInProfit += change;
+}
+// console.log(
+//   "The total amount of changes from a month to another over the period is: " +
+//     changesInProfit
+// );
+var average = changesInProfit / (totalMonths - 1);
+var roundedAverage = average.toFixed(2);
+console.log(
+  "The average of the changes in profit or losses over the period is: " +
+    roundedAverage
+);
