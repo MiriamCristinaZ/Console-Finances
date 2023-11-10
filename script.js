@@ -86,3 +86,59 @@ var finances = [
   ["Jan-2017", 138230],
   ["Feb-2017", 671099],
 ];
+console.log("Financial Anaysis");
+console.log("-----------------");
+//The total number of months included in the dataset
+//In order to identify the total number of months we need the following steps:
+//1. Create a loop which will iterate through all the values from the first collumn of the array set
+//2. Inside the loop will be required to split the date format into months and years in order to be able sum them
+//3. The months have to be translated into numbers with the help of a switch case for being able to sum them up
+//4. We have to create a variable for total months and incremented inside the for loop
+//5. Console the results
+var totalMonths = 0;
+for (var i = 0; i < finances.length; i++) {
+  var dateString = finances[i][0];
+  var [monthString, yearString] = dateString.split("-");
+  var month = 0;
+
+  switch (monthString) {
+    case "Jan":
+      month = 1;
+      break;
+    case "Feb":
+      month = 2;
+      break;
+    case "Mar":
+      month = 3;
+      break;
+    case "Apr":
+      month = 4;
+      break;
+    case "May":
+      month = 5;
+      break;
+    case "Jun":
+      month = 6;
+      break;
+    case "Jul":
+      month = 7;
+      break;
+    case "Aug":
+      month = 8;
+      break;
+    case "Sep":
+      month = 9;
+      break;
+    case "Oct":
+      month = 10;
+      break;
+    case "Nov":
+      month = 11;
+      break;
+    case "Dec":
+      month = 12;
+      break;
+  }
+  totalMonths++;
+}
+console.log("The total number of months is: " + totalMonths);
