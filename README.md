@@ -52,4 +52,6 @@ After running the code, your console output should resemble the following:
 
 Ensure that the output matches the expected format and values.
 
+The deploayed application is available at the following URL: <https://miriamcristinaz.github.io/Console-Finances/>
+
 Feel free to modify the code to enhance functionality or improve readability. Happy coding!
