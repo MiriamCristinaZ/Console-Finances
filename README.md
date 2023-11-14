@@ -34,7 +34,8 @@ Run the Code:
 Execute the JavaScript code in a browser or a Node.js environment. The resulting analysis will be displayed in the console.
 
 Sample Output
-![capture.PNG](Capture.PNG)
+![Financial Analysis Screenshot](Capture.PNG)
+
 After running the code, your console output should resemble the following:
 
 ## Financial Analysis
